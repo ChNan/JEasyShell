@@ -7,6 +7,12 @@ import java.util.List;
  */
 public abstract class AbstractCommand implements Command {
 
+    protected String command;
+
+    public AbstractCommand(final String command) {
+        this.command = command;
+    }
+
     private List<Option> options = new ArrayList<Option>();
 
     private SourceFile sourceFile;

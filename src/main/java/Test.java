@@ -7,8 +7,8 @@ public class Test {
     public static void main(String[] args) {
         // mkdir().destFile("/usr/local/test.txt").execute();
 
-        Shell shell = new Shell();
+        Shell2 shell = new Shell2();
 
-        shell.mkdir().destFile(new DestFile("/usr/local","1.txt"))
+        shell.mkdir().destFile(new DestFile("/usr/local","1.txt")).append();
     }
 }

@@ -6,15 +6,23 @@ public class CommandFactory {
 
     static class Ls extends AbstractCommand {
 
-        public String to() {
+
+        public Ls() {
+            super("ls");
+        }
+        public String parse() {
             return "ls";
         }
     }
 
     static class Mkdir extends AbstractCommand {
 
-        public String to() {
-            return "mkdir";
+        public Mkdir() {
+            super("mkdir");
+        }
+
+        public String parse() {
+            return command+" "+destFile.build();
         }
 
         private DestFile destFile;
@@ -25,35 +33,43 @@ public class CommandFactory {
         }
     }
 
-    static class LL extends AbstractCommand {
 
-        public String to() {
-            return null;
-        }
+    // ============================== 返回Command实例 ==============================
+
+    public Command mkdir() {
+
+        return new Mkdir();
     }
-
-    static class Cd extends AbstractCommand {
-
-        public String to() {
-            return null;
-        }
-    }
-
-
-    static class Grep extends AbstractCommand {
-
-
-        public String to() {
-            return null;
-        }
-    }
-
-    static class More extends AbstractCommand {
-
-        public String to() {
-            return null;
-        }
-    }
+//
+//    static class LL extends AbstractCommand {
+//
+//        public String append() {
+//            return null;
+//        }
+//    }
+//
+//    static class Cd extends AbstractCommand {
+//
+//        public String append() {
+//            return null;
+//        }
+//    }
+//
+//
+//    static class Grep extends AbstractCommand {
+//
+//
+//        public String append() {
+//            return null;
+//        }
+//    }
+//
+//    static class More extends AbstractCommand {
+//
+//        public String append() {
+//            return null;
+//        }
+//    }
 
 
     /************************************************************************************************************************/

@@ -1,3 +1,5 @@
+import java.io.File;
+
 /**
  * @author CHNan
  * @date 2017/11/14
@@ -29,5 +31,9 @@ public class DestFile {
     public DestFile setFileName(String fileName) {
         this.fileName = fileName;
         return this;
+    }
+
+    public String build(){
+        return filePath+ File.pathSeparator+fileName;
     }
 }
